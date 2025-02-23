@@ -10,7 +10,6 @@ pipeline {
                 bat "dotnet build --no-restore --verbosity normal"
             }
         }
-     
         stage('Test') {
             steps {
                 bat "dotnet test --no-build --verbosity normal"
