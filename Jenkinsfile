@@ -1,17 +1,11 @@
 pipeline {
     agent any
-    stages {
-        stage('Checkout repository') {
-            steps {
-                checkout scm
-            }
-        }
         stage('Restore dependencies') {
             steps {
                 bat "dotnet restore"
             }
         }
-        stage('Build the app') {
+        stage('Build') {
             steps {
                 bat "dotnet build --no-restore --verbosity normal"
             }
@@ -23,4 +17,3 @@ pipeline {
             }
         }
     }
-}
